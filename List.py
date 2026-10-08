@@ -54,6 +54,41 @@ def reversal(arr):
     return arr
 print(reversal(arr))
 
+#Practice questions
+arr = [10,20, 30, 0, 40, 50, 0, 0, 60, 70, 80, 90]
+#Minimum and maximum in O(n)
+def minimum(arr):
+    smallest = arr[0]
+    for i in arr:
+        if i < smallest:
+            smallest = i
+    return smallest
+def maximum(arr):
+    largest = arr[0]
+    for i in arr:
+        if i > largest:
+            largest = i
+    return largest
+print(arr)
+print(minimum(arr))
+print(maximum(arr))
+
+#reversing the array in place without using the extra memory
+def reversal(arr):
+    l = len(arr)
+    left = 0
+    right = l-1
+    mid = l // 2
+    temp = 0
+    for i in range(0, mid):
+        temp = arr[left]
+        arr[left] = arr[right]
+        arr[right] = temp
+        left += 1
+        right -= 1
+    print(arr)
+print(arr)
+reversal(arr)
 
 
 
