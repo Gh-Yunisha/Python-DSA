@@ -91,6 +91,52 @@ print(arr)
 reversal(arr)
 
 
+#move zeros to end
+def move_zeros(arr):
+    pos = 0
+    for i in range(len(arr)):
+        if arr[i] != 0:
+            arr[pos] = arr[i]
+            pos += 1
+    while pos < len(arr):
+        arr[pos] = 0
+        pos += 1
+    print(arr)
+print(arr)
+move_zeros(arr)
+
+#duplicate values, return true
+def duplicate_check(a):
+    dict1 ={}
+    ans = True
+    for i in arr:
+        if i in dict1: # we can also use set(a)
+            return True
+            dict1[i] += 1
+        else:
+            dict1[i] = 1
+            ans = False
+    return ans
+val = duplicate_check(arr)
+print(val)
+
+#rotate by k step
+def rotate(arr, k):
+    pos = 0
+    arr1 = []
+    for i in range(0, k): arr1.append(arr[i])
+    for i in range(k, len(arr)):
+        arr[pos] = arr[i]
+        pos += 1
+    i=0
+    while pos < len(arr):
+        arr[pos] = arr1[i]
+        i += 1
+        pos += 1
+    print(arr)
+rotate(arr, 3)
+
+
 
 
 
