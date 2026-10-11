@@ -17,3 +17,27 @@ def two_Sum(l1, target):
     return []
 print(two_Sum(l, tar))
 
+'''Problem 2 (Valid Palindrome): Given a string or list of
+characters, determine if it reads the same forward
+and backward (ignore punctuation and case).'''
+
+def palindrome(text):
+    left = 0
+    right = len(text)-1
+    while left < right:
+        while left < right and not text[left].isalnum():
+            left += 1
+        while left < right and not text[right].isalnum():
+            right -= 1
+        if text[left] != text[right]:
+            return False
+        left += 1
+        right -= 1
+    return True
+
+str1 = input("Enter the string: ").lower()
+if palindrome(str1):
+    print("Palindrome")
+else:
+    print("Not palindrome")
+
