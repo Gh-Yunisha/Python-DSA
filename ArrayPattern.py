@@ -41,3 +41,22 @@ if palindrome(str1):
 else:
     print("Not palindrome")
 
+'''Problem 3 (Maximum Sum Subarray of Size K):
+Given an array of integers and a number k,
+find the maximum sum of any contiguous subarray of 
+size k.'''
+k = 4
+l1 = [40, 2, 4, 15, 34, 1, 9, 7, 45, 12]
+left = 0
+right = 0
+current_window = l1[0] + l1[1] + l1[2] + l1[3]
+max_sum = current_window
+for right in range(k, len(l1)):
+    current_window += l1[right]
+    current_window -= l1[left]
+    if current_window > max_sum:
+        max_sum = current_window
+    #print(f"left={left},right={right},current_window={current_window}, max={max_sum}")
+    left += 1
+print("Maximum sum subarray:", max_sum)
+
