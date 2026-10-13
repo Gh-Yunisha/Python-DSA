@@ -60,3 +60,24 @@ for right in range(k, len(l1)):
     left += 1
 print("Maximum sum subarray:", max_sum)
 
+'''Problem 4 (Smallest Subarray with a Given Sum): 
+Given an array of positive numbers and a positive number S, 
+find the length of the smallest contiguous subarray whose sum 
+is greater than or equal to S.'''
+l1 = [40, 2, 4, 15, 34, 1, 9, 7, 45, 12]
+left = 0
+right = 0
+current_sum = 0
+min_length = len(l1) + 1
+s = int(input("Enter the target number:"))
+for right in range(len(l1)):
+    current_sum += l1[right]
+    while current_sum >= s:
+        current_length = right - left + 1
+        if min_length > current_length:
+            min_length = current_length
+        current_sum -= l1[left]
+        left += 1
+
+print("Sum =", min_length)
+
