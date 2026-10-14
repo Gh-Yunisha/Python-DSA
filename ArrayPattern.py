@@ -81,3 +81,29 @@ for right in range(len(l1)):
 
 print("Sum =", min_length)
 
+'''Problem 5 (Range Sum Query - Immutable): Given an 
+integer array nums, handle multiple queries asking for 
+the sum of elements between indices left and right inclusive.'''
+
+def sum_range(left, right, num):
+    #Solution1
+    try:
+        current_sum = sum(num[left:right+1])
+        return current_sum
+    except IndexError:
+        return -1
+    #Solution 2
+    #try:
+    #    list_sum = 0
+    #    for index in range(left, right + 1):
+    #        list_sum += num[index]
+    #    return list_sum
+    #except IndexError:
+    #    return -1
+
+
+list1 = [3, -5, 2, -1]
+print("Sum =", sum_range(2, 5, list1))
+print("Sum =", sum_range(0, 2, list1))
+print("Sum =", sum_range(1, 2, list1))
+
