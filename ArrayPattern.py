@@ -107,3 +107,24 @@ print("Sum =", sum_range(2, 5, list1))
 print("Sum =", sum_range(0, 2, list1))
 print("Sum =", sum_range(1, 2, list1))
 
+'''Problem 6 (Best Time to Buy and Sell Stock): 
+Given an array prices where prices[i] is the price of
+a given stock on the i-th day, find the maximum profit
+you can achieve by buying on one day and selling on a 
+future day.'''
+
+def max_profit(prices):
+    if not prices:
+        return -1
+    min_price = prices[0]
+    max_p = 0
+    for price in prices:
+        if price < min_price:
+            min_price = price
+        profit = price - min_price
+        if profit > max_p:
+            max_p = profit
+    return max_p
+prices = [7, 1, 5, 3, 6, 8]
+print("Profit:", max_profit(prices))
+
