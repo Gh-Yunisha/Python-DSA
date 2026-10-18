@@ -42,3 +42,24 @@ num2 = [45, 2, 20, 19, 32, 2]
 print(duplicate_with_set(num1))
 print()
 print(duplicate_with_set(num2))'''
+
+'''Problem 2: Frequency Counting (Valid Anagram)
+Given two strings s and t, return True if t is an anagram of s,
+and False otherwise.[Compare character frequency
+maps for both strings, or increment/decrement counts within a single hash table.]
+Target Complexity: Time: O(N), Space: O(1) (since character sets are bounded).
+def is_anagram(s, t):
+    if len(s) != len(t):
+        return False
+    count = {}
+    for char in s:
+        char = char.lower()
+        count[char] = count.get(char, 0) + 1
+    for char in t:
+        char = char.lower()
+        if char not in count or count[char] == 0:
+            return False
+        count[char] -= 1
+    return True
+print(is_anagram("Silent", "listen"))
+print(is_anagram("Genius", "Witty"))'''
