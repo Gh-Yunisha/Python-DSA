@@ -63,3 +63,24 @@ def is_anagram(s, t):
     return True
 print(is_anagram("Silent", "listen"))
 print(is_anagram("Genius", "Witty"))'''
+
+'''Problem 3: Two SumPrompt
+Given an array of integers nums and an integer target, 
+return indices of the two numbers such that they add up to target.
+For each element x, check if its complement (target - x) exists in a 
+dictionary mapping value - index.
+Target Complexity: Time: O(N), Space: O(N).
+def two_sum(nums, target):
+    i = 0
+    count = {}
+    for i, num in enumerate(nums):
+        val = target - num
+        if val in count:
+            return [count[val], i]
+        count[num] = i
+    return []
+
+arr1 = [0, 9, 4, 7, 6]
+arr2 = [1, 2, 3, 4, 6]
+print(two_sum(arr1, 2))
+print(two_sum(arr2, 9))'''
