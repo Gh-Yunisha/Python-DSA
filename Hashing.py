@@ -84,3 +84,22 @@ arr1 = [0, 9, 4, 7, 6]
 arr2 = [1, 2, 3, 4, 6]
 print(two_sum(arr1, 2))
 print(two_sum(arr2, 9))'''
+
+'''Problem 4: First Unique Element / CharacterPrompt
+Given a string s, find the first non-repeating character in it and return its index. 
+If it does not exist, return -1. [Perform a first pass to build character frequencies, 
+then a second linear pass through s to locate the first character with a frequency count of 1.]
+Target Complexity: Time: O(N), Space: O(1).
+def non_repeating(s):
+    i = 0
+    s = s.lower()
+    freq = {}
+    for ch in s:
+        freq[ch] = freq.get(ch, 0) + 1
+    print(freq)
+    for i, c in enumerate(s):
+        if freq[c] == 1:
+            return [i, c]
+    return []
+str1 = "Hello World"
+print(non_repeating(str1))'''
