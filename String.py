@@ -39,6 +39,26 @@ def is_subsequence(s,t):
 print(is_subsequence("abc", "ahbgdc"))
 print(is_subsequence("axc", "ahbgdc"))
 
+'''Problem 3: Longest Substring Without Repeating Characters (Sliding Window + Set/Map)
+Given a string s, find the length of the longest substring without duplicate characters.
+[Dynamic Sliding Window. Expand right to include characters; when a duplicate is found, 
+shrink left until all characters in the active window are unique.]
+Target Complexity: Time: O(N), Space: O(1) (since character set is bounded).'''
+def longest_substring(s):
+    left = 0
+    max_len = 0
+    seen = set()
+    str1 = ''
+    for right in range(len(s)):
+        while s[right] in seen:
+            seen.remove(s[left])
+            left += 1
+        seen.add(s[right])
+        current_len = right - left + 1
+        max_len = max(max_len, current_len)
+    return max_len
+print(longest_substring("abacdef"))
+
 
 
 
